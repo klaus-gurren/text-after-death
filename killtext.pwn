@@ -71,7 +71,7 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
 	format(string, sizeof(string), "Ви були вбиті гравцем {F81414}%s[%d]. {FFFFFF}За допомогою: %s", PI[killerid][pNames], killerid, weapon_name); //форматуємо сам текст та записуємо в масив. PI[killerid][pNames] - нік кілера(pNames - змінити на змінну яка зберігає в собі нік гравця).
 	SendClientMessage(playerid, -1, string); //Відправляємо текст в чат.
 		
-	format(string, sizeof(string), "Час смерті {FFFF00}%d:%02d:%d | {FFFFFF}Дата: {FFFF00}%02d.%02d.%d", hour, minuite, second, month, day, year);
+	format(string, sizeof(string), "Час смерті {FFFF00}%d:%02d:%d | {FFFFFF}Дата: {FFFF00}%02d.%02d.%d", hour, minuite, second, day, month, year);
 	SendClientMessage(playerid, -1, string);
 	return 1;
 }
