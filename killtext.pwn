@@ -20,7 +20,7 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
 {
 	new string[62+(-6+MAX_PLAYER_NAME +3 +26)+1], weapon_name[27]; //створюємо відмінні для зберігання текста, для мінімального споживання памяті підрахував макс.розмір символів
 	
-	new year, month, day, hour, minuite, second; //створюємо відмінну для зберігання дати та часу
+	new year, month, day, hour, minuite, second; //створюємо відмінні для зберігання дати та часу
         getdate(year, month, day); //дізнаємось дату та записуємо в змінні
         gettime(hour, minuite, second); //дізнаємось час та записуємо
 
