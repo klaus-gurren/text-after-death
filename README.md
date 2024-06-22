@@ -17,7 +17,7 @@
   <summary align="center">ENGLISH</summary>
 
   <h2 align="center">
-    System of text after death
+    Information after character death
   </h2>
 
   <p align="center">
@@ -31,7 +31,7 @@
   <summary align="center">УКРАЇНСЬКА</summary>
 
   <h2 align="center">
-    Система тексту після смерті
+    Інформація після смерті персонажа
   </h2>
 
   <p align="center">
