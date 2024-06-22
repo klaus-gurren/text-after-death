@@ -28,7 +28,7 @@
   </details>
 
 <details>
-  <summary align="center">UKRAINE</summary>
+  <summary align="center">УКРАЇНСЬКА</summary>
 
   <h2 align="center">
     Система тексту після смерті
