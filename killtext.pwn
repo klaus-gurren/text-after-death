@@ -1,7 +1,4 @@
 /*
-	Один із варіантів реалізації.
-        На практиці не перевіряв, тому може бути десь баг
-	
 	{F81414} - червоний
 	{FFFFFF} -  білий, -1
 	{FFFF00} - жовтий
@@ -19,16 +16,16 @@ public OnPlayerDeath(playerid, killerid, reason) //В калбек який ви
 
 stock killinfo(playerid, killerid) //сам сток, аргументи: playerid - жертва, killerid - вбивця
 {
-	new string[62+(-6+MAX_PLAYER_NAME +3 +26)+1], weapon_name[27]; //створюємо відмінні для зберігання текста, для мінімального споживання памяті підрахував макс.розмір символів
+    new string[62+(-6+MAX_PLAYER_NAME +3 +26)+1], weapon_name[27]; //створюємо відмінні для зберігання текста, для мінімального споживання памяті підрахував макс.розмір символів
 	
-	new year, month, day, hour, minuite, second; //створюємо відмінні для зберігання дати та часу
+    new year, month, day, hour, minuite, second; //створюємо відмінні для зберігання дати та часу
     getdate(year, month, day); //дізнаємось дату та записуємо в змінні
     gettime(hour, minuite, second); //дізнаємось час та записуємо
 
-	new weapon = GetPlayerWeapon(killerid); //перевіряємо яка зброя в руках в killerid та зберігаємо ID в змінну.
-	switch(weapon) //Оператором перевіряємо число в змінні
+    new weapon = GetPlayerWeapon(killerid); //перевіряємо яка зброя в руках в killerid та зберігаємо ID в змінну.
+    switch(weapon) //Оператором перевіряємо число в змінні
     {
-    	case 1: weapon_name = "Кастета"; //якщо weapon == 1 записуємо текст в лапках в weapon_name, нижче т/п.
+        case 1: weapon_name = "Кастета"; //якщо weapon == 1 записуємо текст в лапках в weapon_name, нижче т/п.
         case 2: weapon_name = "Клюшки для гольфа";
         case 3: weapon_name = "Поліцейської дубинки";
         case 4: weapon_name = "Ножа";
@@ -67,7 +64,7 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
         case 40: weapon_name = "Детонатора";
         case 41: weapon_name = "Балончика з краскою";
         case 42: weapon_name = "Вогнетушителя";
-		default: weapon_name = "Кулаків";
+	default: weapon_name = "Кулаків";
 	}
 	format(string, sizeof(string), "Ви були вбиті гравцем {F81414}%s[%d]. {FFFFFF}За допомогою: %s", PI[killerid][pNames], killerid, weapon_name); //форматуємо сам текст та записуємо в масив. PI[killerid][pNames] - нік кілера(pNames - змінити на змінну яка зберігає в собі нік гравця).
 	SendClientMessage(playerid, -1, string); //Відправляємо текст в чат.
