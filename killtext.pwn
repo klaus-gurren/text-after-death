@@ -22,7 +22,9 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
     getdate(year, month, day); //дізнаємось дату та записуємо в змінні
     gettime(hour, minuite, second); //дізнаємось час та записуємо
 
-    new weapon = GetPlayerWeapon(killerid); //перевіряємо яка зброя в руках в killerid та зберігаємо ID в змінну.
+    new nick[MAX_PLAYER_NAME +1], weapon = GetPlayerWeapon(killerid); //перевіряємо яка зброя в руках в killerid та зберігаємо ID в змінну. (можна і напряму, але для зручності створюю)
+    GetPlayerName(killerid, nick, sizeof(nick));
+
     switch(weapon) //Оператором перевіряємо число в змінні
     {
         case 1: weapon_name = "Кастета"; //якщо weapon == 1 записуємо текст в лапках в weapon_name, нижче т/п.
@@ -66,7 +68,7 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
         case 42: weapon_name = "Вогнетушителя";
 	default: weapon_name = "Кулаків";
     }
-    format(string, sizeof(string), "Ви були вбиті гравцем {F81414}%s[%d]. {FFFFFF}За допомогою: %s", PI[killerid][pNames], killerid, weapon_name); //форматуємо сам текст та записуємо в масив. PI[killerid][pNames] - нік кілера(pNames - змінити на змінну яка зберігає в собі нік гравця).
+    format(string, sizeof(string), "Ви були вбиті гравцем {F81414}%s[%d]. {FFFFFF}За допомогою: %s", nick, killerid, weapon_name); //форматуємо сам текст та записуємо в масив. PI[killerid][pNames] - нік кілера(pNames - змінити на змінну яка зберігає в собі нік гравця).
     SendClientMessage(playerid, -1, string); //Відправляємо текст в чат.
 		
     format(string, sizeof(string), "Час смерті {FFFF00}%d:%02d:%d | {FFFFFF}Дата: {FFFF00}%02d.%02d.%d", hour, minuite, second, day, month, year);
