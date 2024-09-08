@@ -25,7 +25,7 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
     new nick[MAX_PLAYER_NAME +1], weapon = GetPlayerWeapon(killerid); //перевіряємо яка зброя в руках в killerid та зберігаємо ID в змінну. (можна і напряму, але для зручності створюю)
     GetPlayerName(killerid, nick, sizeof(nick));
 
-    switch(weapon) //Оператором перевіряємо число в змінні
+    switch(weapon) //Оператором перевіряємо число в змінні, тобто id зброї, з якої здійснено вбивство.
     {
         case 1: weapon_name = "Кастета"; //якщо weapon == 1 записуємо текст в лапках в weapon_name, нижче т/п.
         case 2: weapon_name = "Клюшки для гольфа";
