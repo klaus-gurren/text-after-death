@@ -18,9 +18,9 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
 {
     new string[62+(-6+MAX_PLAYER_NAME +3 +26)+1], weapon_name[27]; //створюємо відмінні для зберігання текста, для мінімального споживання памяті підрахував макс.розмір символів
 	
-    new year, month, day, hour, minuite, second; //створюємо відмінні для зберігання дати та часу
+    new year, month, day, hour, minuite; //створюємо відмінні для зберігання дати та часу
     getdate(year, month, day); //дізнаємось дату та записуємо в змінні
-    gettime(hour, minuite, second); //дізнаємось час та записуємо
+    gettime(hour, minuite); //дізнаємось час та записуємо
 
     new nick[MAX_PLAYER_NAME +1], weapon = GetPlayerWeapon(killerid); //перевіряємо яка зброя в руках в killerid та зберігаємо ID в змінну. (можна і напряму, але для зручності створюю)
     GetPlayerName(killerid, nick, sizeof(nick));
@@ -71,7 +71,7 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
     format(string, sizeof(string), "Ви були вбиті гравцем {F81414}%s[%d]. {FFFFFF}За допомогою: %s", nick, killerid, weapon_name); //форматуємо сам текст
     SendClientMessage(playerid, -1, string); //Відправляємо текст в чат playerid
 		
-    format(string, sizeof(string), "Час смерті {FFFF00}%d:%02d:%d | {FFFFFF}Дата: {FFFF00}%02d.%02d.%d", hour, minuite, second, day, month, year);
+    format(string, sizeof(string), "Час смерті {FFFF00}%%02d:%02d | {FFFFFF}Дата: {FFFF00}%02d.%02d.%d", hour, minuite, day, month, year);
     SendClientMessage(playerid, -1, string);
     return 1;
 }
