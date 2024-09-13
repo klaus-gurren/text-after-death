@@ -71,7 +71,7 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
     format(string, sizeof(string), "Ви були вбиті гравцем {F81414}%s[%d]. {FFFFFF}За допомогою: %s", nick, killerid, weapon_name); //форматуємо сам текст
     SendClientMessage(playerid, -1, string); //Відправляємо текст в чат playerid
 		
-    format(string, sizeof(string), "Час смерті {FFFF00}%%02d:%02d | {FFFFFF}Дата: {FFFF00}%02d.%02d.%d", hour, minuite, day, month, year);
+    format(string, sizeof(string), "Час смерті {FFFF00}%02d:%02d | {FFFFFF}Дата: {FFFF00}%02d.%02d.%d", hour, minuite, day, month, year);
     SendClientMessage(playerid, -1, string);
     return 1;
 }
