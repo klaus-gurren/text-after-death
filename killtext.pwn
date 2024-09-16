@@ -16,7 +16,7 @@ public OnPlayerDeath(playerid, killerid, reason) //В калбек який ви
 
 stock killinfo(playerid, killerid) //сам сток, аргументи: playerid - жертва, killerid - вбивця
 {
-    new string[62+MAX_PLAYER_NAME-6(+3 +27)+1], weapon_name[27]; //створюємо відмінні для зберігання текста, для мінімального споживання памяті підрахував макс.розмір символів
+    new string[62+(MAX_PLAYER_NAME-6 +3 +27)+1], weapon_name[27]; //створюємо відмінні для зберігання текста, для мінімального споживання памяті підрахував макс.розмір символів
 	
     new year, month, day, hour, minuite; //створюємо відмінні для зберігання дати та часу
     getdate(year, month, day); //дізнаємось дату та записуємо в змінні
