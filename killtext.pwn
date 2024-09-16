@@ -10,7 +10,7 @@ public OnPlayerDeath(playerid, killerid, reason) //В калбек який ви
 	{
 		killinfo(playerid, killerid); //для зручності та оптимальності створив сток, викликаємо його.
 	}
-	return 1;
+    return 1;
 }
 
 
