@@ -21,7 +21,7 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
     new nick[MAX_PLAYER_NAME +1], weapon = GetPlayerWeapon(killerid); //перевіряємо яка зброя в руках в killerid та зберігаємо ID в змінну. (можна і напряму, але для зручності створюю)
     GetPlayerName(killerid, nick, sizeof(nick));
     
-	new weapon_name[][] = {
+    new weapon_name[][] = {
     "Кулаків", // 0
     "Кастета", // 1
     "Клюшки для гольфа", // 2
@@ -64,7 +64,7 @@ stock killinfo(playerid, killerid) //сам сток, аргументи: player
     "Балончика з краскою", // 41
     "Вогнетушителя" // 42
 };
-	new string[62+(MAX_PLAYER_NAME-6 +3 +27)+1]; //створюємо відмінні для зберігання текста, для мінімального споживання памяті підрахував макс.розмір символів
+    new string[62+(MAX_PLAYER_NAME-6 +3 +27)+1]; //створюємо відмінні для зберігання текста, для мінімального споживання памяті підрахував макс.розмір символів
     format(string, sizeof(string), "Ви були вбиті гравцем {F81414}%s[%d]. {FFFFFF}За допомогою: %s", nick, killerid, weapon_name[weapon]); //форматуємо сам текст
     SendClientMessage(playerid, -1, string); //Відправляємо текст в чат playerid
 		
